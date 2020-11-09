@@ -82,11 +82,17 @@ public class Player : MonoBehaviour
             Vector2 anguloInci = new Vector2(Math.Abs(collision.transform.position.x-collision.GetContact(0).point.x),
                 Math.Abs(collision.transform.position.y - collision.GetContact(0).point.y));
             
-            float anguloI =(float)( 180 + Math.Atan(anguloInci.y / anguloInci.x ));
-            anguloI *= (float)(Math.PI / 180);
-            Debug.Log(anguloInci.x + ", " + anguloInci.y);
-            Debug.Log(anguloI);
-            transform.Rotate(0,0,anguloI);
+            float anguloAlfa =(float) Math.Atan(anguloInci.y / anguloInci.x );
+            anguloAlfa *= (float)(180/Math.PI);
+
+            Vector2 anguloInci2 = new Vector2(Math.Abs(transform.position.x - collision.GetContact(0).point.x),
+                Math.Abs(transform.position.y - collision.GetContact(0).point.y));
+
+            float anguloBeta = (float)(Math.Atan(anguloInci2.y / anguloInci2.x));
+            anguloBeta *= (float)(180 / Math.PI);
+            Debug.Log(anguloBeta-anguloAlfa);
+            float anguloFinal = (float)180-anguloBeta+anguloAlfa;
+            transform.Rotate(0,0,anguloFinal);
         }
     }
 }
