@@ -79,19 +79,27 @@ public class Player : MonoBehaviour
         if (collision.collider.tag == "Ground"&& contact.collider == null)
 
         {
-            Vector2 anguloInci = new Vector2(Math.Abs(collision.transform.position.x-collision.GetContact(0).point.x),
-                Math.Abs(collision.transform.position.y - collision.GetContact(0).point.y));
+            Vector2 anguloInci = new Vector2(collision.transform.position.x-collision.GetContact(0).point.x,
+                collision.transform.position.y - collision.GetContact(0).point.y);
             
             float anguloAlfa =(float) Math.Atan(anguloInci.y / anguloInci.x );
             anguloAlfa *= (float)(180/Math.PI);
 
-            Vector2 anguloInci2 = new Vector2(Math.Abs(transform.position.x - collision.GetContact(0).point.x),
-                Math.Abs(transform.position.y - collision.GetContact(0).point.y));
+            Vector2 anguloInci2 = new Vector2(transform.position.x - collision.GetContact(0).point.x,
+                transform.position.y - collision.GetContact(0).point.y);
 
             float anguloBeta = (float)(Math.Atan(anguloInci2.y / anguloInci2.x));
             anguloBeta *= (float)(180 / Math.PI);
-            Debug.Log(anguloBeta-anguloAlfa);
+            Debug.Log(anguloBeta+", "+anguloAlfa);
             float anguloFinal = (float)180-anguloBeta+anguloAlfa;
+            Debug.Log(anguloFinal);
+            if(anguloFinal < 180)
+            {
+                anguloFinal = 360 - anguloFinal;
+            }else if (anguloFinal > 180)
+            {
+                anguloFinal = 180 - (anguloFinal - 180);
+            }
             transform.Rotate(0,0,anguloFinal);
         }
     }
