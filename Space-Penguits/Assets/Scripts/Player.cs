@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -78,7 +79,14 @@ public class Player : MonoBehaviour
         if (collision.collider.tag == "Ground"&& contact.collider == null)
 
         {
-            transform.Rotate(0, 0, 180);
+            Vector2 anguloInci = new Vector2(Math.Abs(collision.transform.position.x-collision.GetContact(0).point.x),
+                Math.Abs(collision.transform.position.y - collision.GetContact(0).point.y));
+            
+            float anguloI =(float)( 180 + Math.Atan(anguloInci.y / anguloInci.x ));
+            anguloI *= (float)(Math.PI / 180);
+            Debug.Log(anguloInci.x + ", " + anguloInci.y);
+            Debug.Log(anguloI);
+            transform.Rotate(0,0,anguloI);
         }
     }
 }
