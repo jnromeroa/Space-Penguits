@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Planetas : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float velocidadGiro;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        GetComponent<Transform>().Rotate(0, 0, velocidadGiro);
     }
 }
