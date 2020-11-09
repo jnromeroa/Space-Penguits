@@ -74,33 +74,10 @@ public class Player : MonoBehaviour
             transform.parent = null;
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    
+    
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.collider.tag == "Ground"&& contact.collider == null)
-
-        {
-            Vector2 anguloInci = new Vector2(collision.transform.position.x-collision.GetContact(0).point.x,
-                collision.transform.position.y - collision.GetContact(0).point.y);
-            
-            float anguloAlfa =(float) Math.Atan(anguloInci.y / anguloInci.x );
-            anguloAlfa *= (float)(180/Math.PI);
-
-            Vector2 anguloInci2 = new Vector2(transform.position.x - collision.GetContact(0).point.x,
-                transform.position.y - collision.GetContact(0).point.y);
-
-            float anguloBeta = (float)(Math.Atan(anguloInci2.y / anguloInci2.x));
-            anguloBeta *= (float)(180 / Math.PI);
-            Debug.Log(anguloBeta+", "+anguloAlfa);
-            float anguloFinal = (float)180-anguloBeta+anguloAlfa;
-            Debug.Log(anguloFinal);
-            if(anguloFinal < 180)
-            {
-                anguloFinal = 360 - anguloFinal;
-            }else if (anguloFinal > 180)
-            {
-                anguloFinal = 180 - (anguloFinal - 180);
-            }
-            transform.Rotate(0,0,anguloFinal);
-        }
+        transform.rotation = Quaternion.FromToRotation(transform.up, -Physics2D.gravity) * transform.rotation;
     }
 }
