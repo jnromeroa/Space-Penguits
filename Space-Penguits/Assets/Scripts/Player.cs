@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public float longRay;
     [SerializeField] LayerMask groundLayer;
     private RaycastHit2D contact;
+    
 
     private float time = 0;
     public float waitTime;
@@ -49,12 +50,14 @@ public class Player : MonoBehaviour
     }
     void CheckGround()
     {
-        contact = Physics2D.Raycast(transform.position, Vector2.down, longRay, groundLayer);
-        Debug.DrawRay(transform.position, Vector2.down * longRay, Color.red);
+        contact = Physics2D.Raycast(transform.position, -transform.up, longRay, groundLayer);
+        Debug.DrawLine(transform.position, -transform.up, Color.red);
+        //contact = Physics2D.Raycast(transform.position, feet*longRay, longRay, groundLayer);
+        //Debug.DrawRay(transform.position, feet * longRay, Color.red);
     }
     void Jump()
     {
-        RBPlayer.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        RBPlayer.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
         grounded = false;
         time += Time.deltaTime;
     }
@@ -64,6 +67,11 @@ public class Player : MonoBehaviour
         {
             grounded = true;
             transform.parent = contact.collider.transform;
+        }
+        else
+        {
+            grounded = false;
+            transform.parent = null;
         }
     }
 }
