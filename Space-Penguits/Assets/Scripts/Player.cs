@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D RBPlayer;
     public float jumpForce;
-    [SerializeField] private bool grounded;
+    public bool grounded;
     public float longRay;
     [SerializeField] LayerMask groundLayer;
     private RaycastHit2D contact;
@@ -51,9 +51,8 @@ public class Player : MonoBehaviour
     void CheckGround()
     {
         contact = Physics2D.Raycast(transform.position, -transform.up, longRay, groundLayer);
-        Debug.DrawLine(transform.position, -transform.up, Color.red);
-        //contact = Physics2D.Raycast(transform.position, feet*longRay, longRay, groundLayer);
-        //Debug.DrawRay(transform.position, feet * longRay, Color.red);
+        //Debug.DrawLine(transform.position, -transform.up, Color.red);
+       
     }
     void Jump()
     {
@@ -72,6 +71,14 @@ public class Player : MonoBehaviour
         {
             grounded = false;
             transform.parent = null;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Ground"&& contact.collider == null)
+
+        {
+            transform.Rotate(0, 0, 180);
         }
     }
 }
