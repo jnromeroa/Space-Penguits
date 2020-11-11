@@ -245,7 +245,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  waitTime: 0
 --- !u!50 &31013014
 Rigidbody2D:
   serializedVersion: 4
@@ -2735,6 +2734,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadGiro: 0
+  Camarita: {fileID: 1070891117}
+  nextPlanet: {fileID: 1545437082}
 --- !u!212 &434936224
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2815,7 +2816,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.04
+  m_Radius: 2.3
 --- !u!1 &515770095
 GameObject:
   m_ObjectHideFlags: 0
@@ -16544,7 +16545,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726343957}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.79, y: -2.8, z: -10}
+  m_LocalPosition: {x: -1.79, y: -2.8000002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 37714140}
@@ -16635,6 +16636,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadGiro: -0.5
+  Camarita: {fileID: 0}
+  nextPlanet: {fileID: 0}
 --- !u!114 &758010415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16889,7 +16892,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1070891117}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.79, y: -2.8, z: -10}
+  m_LocalPosition: {x: -1.79, y: -2.8000002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2128881431}
@@ -17250,6 +17253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadGiro: -0.5
+  Camarita: {fileID: 1070891117}
+  nextPlanet: {fileID: 2049938012}
 --- !u!58 &1545437089
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17398,6 +17403,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadGiro: 0.5
+  Camarita: {fileID: 1070891117}
+  nextPlanet: {fileID: 758010412}
 --- !u!114 &2049938015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17556,7 +17563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LookaheadTime: 0
-  m_LookaheadSmoothing: 10
+  m_LookaheadSmoothing: 30
   m_LookaheadIgnoreY: 0
   m_XDamping: 1
   m_YDamping: 1
@@ -17564,11 +17571,11 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0
+  m_DeadZoneWidth: 0.5
+  m_DeadZoneHeight: 0.32
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.8
+  m_SoftZoneWidth: 0.84
   m_SoftZoneHeight: 0.8
   m_BiasX: 0
   m_BiasY: 0
