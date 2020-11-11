@@ -1,20 +1,30 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Planetas : MonoBehaviour
 {
     public float velocidadGiro;
+    public GameObject Camarita;
+    public GameObject nextPlanet;
 
     void Start()
     {
-        
+        //Camarita.GetComponent<CinemachineVirtualCamera>().LookAt = nextPlanet.transform;
     }
 
     
     void Update()
     {
         GetComponent<Transform>().Rotate(0, 0, velocidadGiro);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            //Camarita.GetComponent<CinemachineVirtualCamera>().LookAt = nextPlanet.transform;
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
