@@ -13,8 +13,7 @@ public class Player : MonoBehaviour
     private RaycastHit2D contact;
     
 
-    private float time = 0;
-    public float waitTime;
+    
 
     void Start()
     {
@@ -29,20 +28,8 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
-        if (time == 0)
-        {
-            Ground();
-        }
-        else if (time > 0 && time < waitTime)
-        {
-            time += Time.deltaTime;
-            grounded = false;
-        }
-        else if (time >= waitTime)
-        {
-            Ground();
-            time = 0;
-        }
+        
+        Ground();
     }
     void Update()
 
@@ -57,9 +44,9 @@ public class Player : MonoBehaviour
     }
     void Jump()
     {
-        RBPlayer.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+        RBPlayer.velocity = transform.up * jumpForce;
         grounded = false;
-        time += Time.deltaTime;
+        
     }
     void Ground()
     {
@@ -79,5 +66,12 @@ public class Player : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         transform.rotation = Quaternion.FromToRotation(transform.up, -Physics2D.gravity) * transform.rotation;
+        
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        RBPlayer.Sleep();
+    }
+
 }
+
