@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
         else
         {
             grounded = false;
+            RBPlayer.gravityScale = 0;
             transform.parent = null;
         }
     }
