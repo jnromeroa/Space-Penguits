@@ -8,13 +8,14 @@ using UnityEngine;
 public class Planetas : MonoBehaviour
 {
     public float velocidadGiro;
-    public GameObject Camarita;
+    public  float velocidadCamara = 1f;
+    private GameObject CamaraRig;
     public GameObject nextPlanet;
     
 
     void Start()
     {
-        Camarita.GetComponent<CinemachineVirtualCamera>().LookAt = nextPlanet.transform;
+        CamaraRig = GameObject.Find("CameraRig");
     }
 
     
@@ -26,7 +27,7 @@ public class Planetas : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Camarita.GetComponent<CinemachineVirtualCamera>().LookAt = nextPlanet.transform;
+            
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -34,11 +35,15 @@ public class Planetas : MonoBehaviour
         if(collision.tag == "Player")
         {
             Physics2D.gravity = transform.position - collision.gameObject.transform.position;
-            collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = 3;
+            
+            CamaraRig.transform.position = Vector3.MoveTowards(CamaraRig.transform.position, 
+                new Vector3((CamaraRig.transform.position.x+nextPlanet.transform.position.x)/2,
+                (CamaraRig.transform.position.y + nextPlanet.transform.position.y) / 2), velocidadCamara * Time.deltaTime);
+            
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+        
     }
 }
