@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public float longRay;
     [SerializeField] LayerMask groundLayer;
     private RaycastHit2D contact;
+    private float gravity;
     
 
     
@@ -18,6 +19,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         RBPlayer = GetComponent<Rigidbody2D>();
+        gravity = RBPlayer.gravityScale;
+        Debug.Log(gravity);
     }
 
     // Update is called once per frame
@@ -46,7 +49,7 @@ public class Player : MonoBehaviour
     {
         RBPlayer.velocity = transform.up * jumpForce;
         grounded = false;
-        
+        RBPlayer.gravityScale = 0;
     }
     void Ground()
     {
@@ -54,10 +57,12 @@ public class Player : MonoBehaviour
         {
             grounded = true;
             transform.parent = contact.collider.transform;
+            RBPlayer.gravityScale = gravity;
         }
         else
         {
             grounded = false;
+            RBPlayer.gravityScale = 0;
             transform.parent = null;
         }
     }
