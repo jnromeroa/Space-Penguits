@@ -8,7 +8,7 @@ using UnityEngine;
 public class Planetas : MonoBehaviour
 {
     public float velocidadGiro;
-    public  float velocidadCamara = 1f;
+    public  float velocidadCamara;
     private GameObject CamaraRig;
     public GameObject nextPlanet;
     
