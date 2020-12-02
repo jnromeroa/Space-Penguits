@@ -37,8 +37,8 @@ public class Planetas : MonoBehaviour
             Physics2D.gravity = transform.position - collision.gameObject.transform.position;
             
             CamaraRig.transform.position = Vector3.MoveTowards(CamaraRig.transform.position, 
-                new Vector3((CamaraRig.transform.position.x+nextPlanet.transform.position.x)/2,
-                (CamaraRig.transform.position.y + nextPlanet.transform.position.y) / 2), velocidadCamara * Time.deltaTime);
+                new Vector3((transform.position.x+nextPlanet.transform.position.x)/2,
+                (transform.position.y + nextPlanet.transform.position.y) / 2), velocidadCamara * Time.deltaTime);
             
         }
     }
