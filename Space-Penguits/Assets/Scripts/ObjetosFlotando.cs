@@ -10,7 +10,7 @@ public class ObjetosFlotando : MonoBehaviour
     void Start()
     {
         objectRB = GetComponent<Rigidbody2D>();
-        objectRB.velocity = new Vector2(Random.Range(0, speed), Random.Range(0, speed));
+        objectRB.velocity = new Vector2(Random.Range(-speed, speed), Random.Range(-speed, speed));
     }
 
     // Update is called once per frame

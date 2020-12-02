@@ -20,24 +20,28 @@ public class Player : MonoBehaviour
     {
         RBPlayer = GetComponent<Rigidbody2D>();
         gravity = RBPlayer.gravityScale;
-        Debug.Log(gravity);
+        
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        CheckGround();
-        if (Input.GetButtonDown("Jump") && grounded)
-        {
-            Jump();
-        }
         
-        Ground();
     }
     void Update()
 
     {
-        
+        CheckGround();
+        /*
+        Debug.Log("en tierra?" + grounded);
+        Debug.Log("ambos a la vez?" + (Input.GetMouseButtonDown(0) && grounded));*/
+
+        if (Input.GetMouseButtonDown(0) && grounded)
+        {
+            Jump();
+        }
+
+        Ground();
     }
     void CheckGround()
     {
