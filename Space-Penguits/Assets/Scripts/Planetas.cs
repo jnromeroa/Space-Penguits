@@ -1,6 +1,8 @@
 ﻿using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class Planetas : MonoBehaviour
@@ -8,10 +10,11 @@ public class Planetas : MonoBehaviour
     public float velocidadGiro;
     public GameObject Camarita;
     public GameObject nextPlanet;
+    
 
     void Start()
     {
-        //Camarita.GetComponent<CinemachineVirtualCamera>().LookAt = nextPlanet.transform;
+        Camarita.GetComponent<CinemachineVirtualCamera>().LookAt = nextPlanet.transform;
     }
 
     
@@ -23,7 +26,7 @@ public class Planetas : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            //Camarita.GetComponent<CinemachineVirtualCamera>().LookAt = nextPlanet.transform;
+            Camarita.GetComponent<CinemachineVirtualCamera>().LookAt = nextPlanet.transform;
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
