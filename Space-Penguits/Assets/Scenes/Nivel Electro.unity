@@ -364,8 +364,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147918767}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.3, y: -9.9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.1, y: 23.6, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 37714140}
   m_RootOrder: 0
@@ -2734,7 +2734,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadGiro: 0
-  velocidadCamara: 500
   nextPlanet: {fileID: 1545437082}
 --- !u!212 &434936224
 SpriteRenderer:
@@ -2976,6 +2975,7 @@ GameObject:
   - component: {fileID: 527315667}
   - component: {fileID: 527315669}
   - component: {fileID: 527315668}
+  - component: {fileID: 527315670}
   m_Layer: 0
   m_Name: estrellas
   m_TagString: Untagged
@@ -2992,7 +2992,7 @@ Transform:
   m_GameObject: {fileID: 527315666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.01, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 1143348426}
   m_RootOrder: 0
@@ -16498,6 +16498,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &527315670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527315666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ba15a41821f0246b1a5bd5b80994f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  length: {x: 0, y: 0}
+  cam: {fileID: 726343957}
+  parallaxEffect: 1
 --- !u!1 &593023000
 GameObject:
   m_ObjectHideFlags: 0
@@ -16804,7 +16819,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadGiro: -0.5
-  velocidadCamara: 500
   nextPlanet: {fileID: 0}
 --- !u!114 &758010415
 MonoBehaviour:
@@ -17013,6 +17027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b0d3cdc0e1f42748b7518669066f123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathby: 0
 --- !u!61 &770516767
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17161,7 +17176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 894636815}
   m_Layer: 0
-  m_Name: Planeta
+  m_Name: Planeta origen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17739,7 +17754,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadGiro: -0.6
-  velocidadCamara: 500
   nextPlanet: {fileID: 2049938012}
 --- !u!58 &1545437089
 CircleCollider2D:
@@ -18149,8 +18163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c523f76cfb182e49b22bba5dcc53d95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadGiro: 0.5
-  velocidadCamara: 500
+  velocidadGiro: 0.45
   nextPlanet: {fileID: 758010412}
 --- !u!114 &2049938015
 MonoBehaviour:
