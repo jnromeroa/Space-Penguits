@@ -349,6 +349,7 @@ GameObject:
   - component: {fileID: 147918768}
   - component: {fileID: 147918770}
   - component: {fileID: 147918769}
+  - component: {fileID: 147918771}
   m_Layer: 9
   m_Name: Fondo
   m_TagString: Untagged
@@ -2701,6 +2702,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &147918771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147918767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ba15a41821f0246b1a5bd5b80994f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1070891119}
+  relativeMove: 0.3
+  lockY: 1
 --- !u!1 &270325067
 GameObject:
   m_ObjectHideFlags: 0
@@ -16671,9 +16687,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ba15a41821f0246b1a5bd5b80994f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  length: {x: 0, y: 0}
   cam: {fileID: 726343957}
-  parallaxEffect: 1
+  relativeMove: 0.3
+  lockY: 0
 --- !u!1 &593023000
 GameObject:
   m_ObjectHideFlags: 0
@@ -16788,8 +16804,8 @@ Transform:
   m_LocalPosition: {x: -1.85, y: 1.04, z: -69.12924}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1143348426}
   - {fileID: 770516765}
+  - {fileID: 1143348426}
   - {fileID: 37714140}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -17174,7 +17190,7 @@ Transform:
   m_LocalScale: {x: 11.229703, y: 19.981129, z: 1}
   m_Children: []
   m_Father: {fileID: 726343960}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &770516766
 MonoBehaviour:
@@ -17571,7 +17587,7 @@ Transform:
   m_Children:
   - {fileID: 527315667}
   m_Father: {fileID: 726343960}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1406335084
 GameObject:
