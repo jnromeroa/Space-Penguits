@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nivel Electro.unity
     guid: ca87b450895e4744e945dff59b8e283d
+  - enabled: 1
+    path: Assets/Scenes/Options.unity
+    guid: bae85d38b3ca81240bd6046f7d977591
   m_configObjects: {}
