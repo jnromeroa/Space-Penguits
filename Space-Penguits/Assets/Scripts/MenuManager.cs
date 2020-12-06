@@ -14,14 +14,8 @@ public class MenuManager : MonoBehaviour
     {
         Application.Quit();
     }
-    void Start()
+    public void Options()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.LoadScene("Options");
     }
 }
