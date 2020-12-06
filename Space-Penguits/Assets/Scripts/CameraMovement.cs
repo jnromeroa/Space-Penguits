@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour
     public float velocidadCamara;
     public void TowardsNextPlanet(Vector2 currPlanetPos, Vector2 nextPlanetPos)
     {
-        transform.position = Vector3.MoveTowards(transform.position,
+        transform.position = Vector2.MoveTowards(transform.position,
                new Vector2((currPlanetPos.x + nextPlanetPos.x) / 2,
                (currPlanetPos.y + nextPlanetPos.y) / 2), velocidadCamara * Time.deltaTime);
     }

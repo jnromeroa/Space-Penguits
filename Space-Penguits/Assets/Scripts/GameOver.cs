@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     // Start is called before the first frame update
+    public enum DeathType {Stranded, Unmotivated, Crashed}
+    public DeathType deathby;
     private void OnTriggerExit2D(Collider2D collision)
     {
         
