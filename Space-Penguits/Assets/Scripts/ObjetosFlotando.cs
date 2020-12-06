@@ -9,8 +9,10 @@ public class ObjetosFlotando : MonoBehaviour
     public float speed;
     void Start()
     {
+       
         objectRB = GetComponent<Rigidbody2D>();
-        objectRB.velocity = new Vector2(Random.Range(-speed, speed), Random.Range(-speed, speed));
+        
+        
     }
 
     // Update is called once per frame
@@ -18,4 +20,13 @@ public class ObjetosFlotando : MonoBehaviour
     {
         
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "CameraCollider")
+        {
+            objectRB.velocity = new Vector2(Random.Range(-speed, speed), Random.Range(-speed, speed));
+        }
+    }
+    
+
 }
