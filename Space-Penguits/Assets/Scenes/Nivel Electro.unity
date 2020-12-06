@@ -2723,9 +2723,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ba15a41821f0246b1a5bd5b80994f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 0.4
-  viewTarget: {fileID: 1070891117}
-  xOnly: 1
+  cam: {fileID: 1070891119}
+  relativeMove: 0.3
+  lockY: 1
 --- !u!1 &270325067
 GameObject:
   m_ObjectHideFlags: 0
