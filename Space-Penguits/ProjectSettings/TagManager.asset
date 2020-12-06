@@ -43,3 +43,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Back
+    uniqueID: 3400494045
+    locked: 0
+  - name: Middle
+    uniqueID: 2188773355
+    locked: 0
+  - name: Entity
+    uniqueID: 4040661695
+    locked: 0
+  - name: Fore
+    uniqueID: 705211881
+    locked: 0
+  - name: Camara
+    uniqueID: 4282614091
+    locked: 0

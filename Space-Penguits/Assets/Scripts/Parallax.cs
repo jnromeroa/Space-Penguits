@@ -2,24 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.Tilemaps;
 
 public class Parallax : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Transform cam;
-    public float relativeMove = .3f;
-    public bool lockY = false;
+    [SerializeField] float scrollSpeed = 0.3f;
+    [SerializeField] GameObject viewTarget; //cam
+    [SerializeField] bool xOnly = true;
 
+    Tilemap tilemap;
+
+    void Star()
+    {
+        tilemap = GetComponent<Tilemap>();
+    }
     void Update()
     {
-        if (lockY)
+        float newXPos = viewTarget.transform.position.x * scrollSpeed;
+        float newYPos = viewTarget.transform.position.y * scrollSpeed;
+
+        if (xOnly)
         {
-            transform.position = new Vector2(cam.position.x * relativeMove, transform.position.y);
+            tilemap.transform.position = new Vector3(newXPos, tilemap.transform.position.y, tilemap.transform.position.z);
         }
         else
         {
-            transform.position = new Vector2(cam.position.x * relativeMove,
-                                                               cam.position.y * relativeMove);
+            tilemap.transform.position = new Vector3(newXPos, newYPos, tilemap.transform.position.z);
         }
+        
     }
+
+
 }
