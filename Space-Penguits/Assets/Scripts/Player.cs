@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     {
         RBPlayer = GetComponent<Rigidbody2D>();
         gravity = RBPlayer.gravityScale;
+        RBPlayer.Sleep();
         
     }
 
