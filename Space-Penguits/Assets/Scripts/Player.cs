@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     private RaycastHit2D contact;
     private float gravity;
+    private int jumpcount;
+    [SerializeField] private GameObject musica;
     
 
     
@@ -38,7 +40,12 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && grounded)
         {
+            if(jumpcount == 0)
+            {
+                PlayMusic();
+            }
             Jump();
+            jumpcount++;
         }
 
         Ground();
@@ -88,6 +95,10 @@ public class Player : MonoBehaviour
         {
             RBPlayer.Sleep();
         }
+    }
+    public void PlayMusic()
+    {
+        musica.GetComponent<AudioSource>().Play();
     }
 
 }

@@ -20,7 +20,7 @@ public class Planetas : MonoBehaviour
     
     void Update()
     {
-        GetComponent<Transform>().Rotate(0, 0, velocidadGiro);
+        GetComponent<Transform>().Rotate(0, 0, velocidadGiro*Time.deltaTime);
     }
     
     private void OnTriggerStay2D(Collider2D collision)
