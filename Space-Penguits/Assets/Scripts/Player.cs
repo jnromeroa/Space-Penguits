@@ -74,12 +74,20 @@ public class Player : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D collision)
     {
-        transform.rotation = Quaternion.FromToRotation(transform.up, -Physics2D.gravity) * transform.rotation;
         
+        if (collision.tag == "Ground")
+        {
+            transform.rotation = Quaternion.FromToRotation(transform.up, -Physics2D.gravity) * transform.rotation;
+        }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        RBPlayer.Sleep();
+        
+        if(collision.tag == "Ground")
+        {
+            RBPlayer.Sleep();
+        }
     }
 
 }
