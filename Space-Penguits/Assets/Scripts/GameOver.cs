@@ -10,15 +10,29 @@ public class GameOver : MonoBehaviour
     public DeathType deathby;
     private void OnTriggerExit2D(Collider2D collision)
     {
-        
-        if(collision.tag == "Player")
+        if(deathby == DeathType.Stranded)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            
+            if (collision.tag == "Player")
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            }
         }
+        
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        
+       
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (deathby == DeathType.Unmotivated)
+        {
+            if (collision.tag == "Player")
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            }
+        }
     }
 }
