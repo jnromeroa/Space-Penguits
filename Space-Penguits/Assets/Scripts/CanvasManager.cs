@@ -1,4 +1,4 @@
-﻿using Boo.Lang.Environments;
+﻿
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour
 {
- 
+
     [SerializeField] private Image Desmotivado;
     [SerializeField] private Image Varado;
     [SerializeField] private Image Estrellado;
@@ -17,9 +17,9 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameObject myCanvas;
     public int desmotivCount = 0;
     public int varadoCount = 0;
-    public int EstrellaCount = 0;
+    public int estrellaCount = 0;
     private static CanvasManager CManInstance;
-     
+
     private void Awake()
     {
         DontDestroyOnLoad(this);
@@ -33,7 +33,7 @@ public class CanvasManager : MonoBehaviour
 
         } else
         {
-            Object.Destroy(this);
+            Object.Destroy(gameObject);
             Object.Destroy(myCanvas);
             
 
@@ -64,10 +64,10 @@ public class CanvasManager : MonoBehaviour
             Varado.color = Color.white;
             VarTxt.text = "" + varadoCount;
         }
-        if (desmotivCount > 0)
+        if (estrellaCount > 0)
         {
             Estrellado.color = Color.white;
-            EstTxt.text = "" + EstrellaCount;
+            EstTxt.text = "" + estrellaCount;
         }
 
     }
