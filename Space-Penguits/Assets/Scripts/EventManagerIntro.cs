@@ -44,7 +44,7 @@ public class EventManagerIntro : MonoBehaviour
         
         yield return new WaitForSeconds(3f);
         corazon.GetComponentInChildren<Animator>().SetBool("Clicked", true);
-        yield return new WaitUntil(()=>Input.GetMouseButtonDown(0));
+        yield return new WaitForSeconds(7f);
         celular.GetComponentInChildren<Animator>().SetBool("Clicked", true);
         maria.GetComponentInChildren<Animator>().SetBool("Clicked", true);
         yield return new WaitForSeconds(1f);
