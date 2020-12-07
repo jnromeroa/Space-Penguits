@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class EventManagerIntro : MonoBehaviour
 {
@@ -13,6 +13,7 @@ public class EventManagerIntro : MonoBehaviour
     [SerializeField] private GameObject maria;
     [SerializeField] private GameObject celular;
     [SerializeField] private GameObject chat;
+    [SerializeField] private GameObject ultimaAnim;
 
     void Start()
     {
@@ -22,6 +23,10 @@ public class EventManagerIntro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            toNextScene();
+        }
         if (Input.GetMouseButtonDown(0))
         {
             textoIntro.GetComponentInChildren<Animator>().SetBool("Clicked", true);
@@ -44,8 +49,16 @@ public class EventManagerIntro : MonoBehaviour
         maria.GetComponentInChildren<Animator>().SetBool("Clicked", true);
         yield return new WaitForSeconds(1f);
         chat.GetComponentInChildren<Animator>().SetBool("Clicked", true);
+        yield return new WaitForSeconds(15f);
+        ultimaAnim.GetComponentInChildren<Animator>().SetBool("Clicked", true);
+        yield return new WaitForSeconds(15f);
+        toNextScene();
 
 
+    }
+    void toNextScene()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
 }
