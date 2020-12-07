@@ -21,7 +21,13 @@ public class EventManagerIntro : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             textoIntro.GetComponentInChildren<Animator>().SetBool("Clicked", true);
-            panel.GetComponentInChildren<Animator>().SetBool("Clicked", true);
+            StartCoroutine(corrutina());
         }
     }
+    IEnumerator corrutina()
+    {
+        yield return new WaitForSeconds(2f);
+        panel.GetComponentInChildren<Animator>().SetBool("Clicked", true);
+    }
+
 }
