@@ -10,6 +10,9 @@ public class EventManagerIntro : MonoBehaviour
     [SerializeField] private GameObject textoIntro;
     [SerializeField] private GameObject panel;
     [SerializeField] private GameObject corazon;
+    [SerializeField] private GameObject maria;
+    [SerializeField] private GameObject celular;
+    [SerializeField] private GameObject chat;
 
     void Start()
     {
@@ -36,6 +39,12 @@ public class EventManagerIntro : MonoBehaviour
         
         yield return new WaitForSeconds(3f);
         corazon.GetComponentInChildren<Animator>().SetBool("Clicked", true);
+        yield return new WaitUntil(()=>Input.GetMouseButtonDown(0));
+        celular.GetComponentInChildren<Animator>().SetBool("Clicked", true);
+        maria.GetComponentInChildren<Animator>().SetBool("Clicked", true);
+        yield return new WaitForSeconds(1f);
+        chat.GetComponentInChildren<Animator>().SetBool("Clicked", true);
+
 
     }
 
