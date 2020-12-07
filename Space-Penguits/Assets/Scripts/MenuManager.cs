@@ -9,7 +9,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject musica;
     private void Start()
     {
-        
+
+        DontDestroyOnLoad(gameObject);
     }
     public void Play()
     {
