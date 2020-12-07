@@ -5013,7 +5013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadGiro: -170
-  nextPlanet: {fileID: 0}
+  nextPlanet: {fileID: 1806392661}
 --- !u!114 &474936805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20050,7 +20050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c523f76cfb182e49b22bba5dcc53d95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadGiro: 250
+  velocidadGiro: 200
   nextPlanet: {fileID: 1214170950}
 --- !u!114 &716258296
 MonoBehaviour:
@@ -21192,7 +21192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadGiro: -200
-  nextPlanet: {fileID: 0}
+  nextPlanet: {fileID: 1102783991}
 --- !u!114 &789850496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23368,7 +23368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadGiro: -200
-  nextPlanet: {fileID: 0}
+  nextPlanet: {fileID: 474936801}
 --- !u!114 &1102783995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28261,7 +28261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadGiro: 150
-  nextPlanet: {fileID: 0}
+  nextPlanet: {fileID: 1325011350}
 --- !u!114 &1806392665
 MonoBehaviour:
   m_ObjectHideFlags: 0
